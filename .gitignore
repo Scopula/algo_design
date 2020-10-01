@@ -1,0 +1,5 @@
+# TexMaker produced stuff
+*.aux
+*.log
+*.synctex.gz
+*.tex
