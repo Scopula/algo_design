@@ -1,6 +1,8 @@
+*.out
+.vscode
+
 # TexMaker produced stuff
 *.aux
 *.log
 *.synctex.gz
 *.tex
-*.png
