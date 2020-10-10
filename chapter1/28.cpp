@@ -4,12 +4,16 @@ typedef long long ll;
 using namespace std;
 
 /*
+NEW solution, slightly changed from old one.
+Runs in O(logn).
+
 Explaining my algorithm is best done with an example.
-Suppose we want to divide 14 by 2. The algorithm:
-- Subtracts 2 from 14, so our current value is 12.
-- Subtracts 4 from 12, so our current value is 8.
-- Subtracts 6 from 8, so our current value is 2.
-- Because 8 > 2, recursively repeats the proccess.
+Suppose we want to divide 38 by 2. The algorithm:
+- Subtracts 2 from 38, so our current value is 36.
+- Subtracts 4 from 36, so our current value is 32.
+- Subtracts 8 from 32, so our current value is 24.
+- Subtracts 16 from 24, so our current values is 8.
+- Because 32 > 8, recursively repeats the above proccess.
 */
 
 int int_div(int val, int div) {
@@ -30,8 +34,8 @@ int int_div(int val, int div) {
         count += cur_div_count;
         
         // Update
-        cur_div += div;
-        cur_div_count += 1;
+        cur_div = cur_div + cur_div;
+        cur_div_count = cur_div_count + cur_div_count;
     }
     
     // Recursive step.
@@ -47,7 +51,23 @@ int main() {
     assert(int_div(4, 1) == 4 / 1);
     assert(int_div(12313, 13) == 12313 / 13);
     assert(int_div(1231323, 4) == 1231323 / 4);
-    
+    assert(int_div(51212213, 27) == 51212213 / 27);
+    assert(int_div(51212213, 23) == 51212213 / 23);
+    assert(int_div(55773, 3) == 55773 / 3);
+    assert(int_div(55773, 4) == 55773 / 4);
+    assert(int_div(55773, 5) == 55773 / 5);
+    assert(int_div(55773, 6) == 55773 / 6);
+    assert(int_div(55773, 7) == 55773 / 7);
+    assert(int_div(55773, 8) == 55773 / 8);
+    assert(int_div(55773, 9) == 55773 / 9);
+    assert(int_div(55773, 10) == 55773 / 10);
+    assert(int_div(55773, 11) == 55773 / 11);
+    assert(int_div(55773, 12) == 55773 / 12);
+    assert(int_div(55773, 13) == 55773 / 13);
+    assert(int_div(55773, 14) == 55773 / 14);
+    assert(int_div(55773, 15) == 55773 / 15);
+    assert(int_div(55773, 16) == 55773 / 16);
+
     cout << "All tests passed.";
     return 0;
 
